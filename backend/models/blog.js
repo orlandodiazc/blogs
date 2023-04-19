@@ -9,7 +9,6 @@ const blogSchema = new mongoose.Schema({
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'User',
 	},
-	userId: String,
 })
 
 blogSchema.set('toJSON', {
