@@ -1,6 +1,6 @@
 import Blog from './Blog'
 
-export default function BlogList({ blogs, handleLike, handleRemove }) {
+export default function BlogList({ user, blogs, handleLike, handleRemove }) {
 	return (
 		<ul>
 			{blogs.map((blog) => (
@@ -9,6 +9,7 @@ export default function BlogList({ blogs, handleLike, handleRemove }) {
 					blog={blog}
 					handleLike={handleLike}
 					handleRemove={handleRemove}
+					user={user}
 				/>
 			))}
 		</ul>

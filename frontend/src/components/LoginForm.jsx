@@ -18,7 +18,7 @@ export default function LoginForm({ handleLogin }) {
 					<input
 						onChange={(ev) => setUsername(ev.target.value)}
 						value={username}
-						name="Username"
+						id="username"
 						type="text"
 					/>
 				</label>
@@ -29,7 +29,7 @@ export default function LoginForm({ handleLogin }) {
 					<input
 						onChange={(ev) => setPassword(ev.target.value)}
 						value={password}
-						name="Password"
+						id="password"
 						type="password"
 					/>
 				</label>

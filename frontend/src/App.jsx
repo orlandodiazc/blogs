@@ -50,7 +50,6 @@ function App() {
 	async function handleNewBlog(newBlog) {
 		try {
 			const createdBlog = await blogService.addBlog(newBlog)
-			console.log(createdBlog)
 			blogFormRef.current.toggleVisibility()
 			setBlogs([...blogs, createdBlog])
 			setMessage({ description: 'Added new blog', error: false })
@@ -101,7 +100,6 @@ function App() {
 	}
 
 	const sortedBlogs = blogs.sort((a, b) => b.likes - a.likes)
-
 	return (
 		<div>
 			<h1>Blogs</h1>
@@ -121,6 +119,7 @@ function App() {
 						blogs={sortedBlogs}
 						handleLike={handleLike}
 						handleRemove={handleRemove}
+						user={user}
 					/>
 				</>
 			)}

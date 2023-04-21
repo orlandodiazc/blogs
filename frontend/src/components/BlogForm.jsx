@@ -37,7 +37,7 @@ export default function BlogForm({ handleNewBlog }) {
 					<input
 						type="text"
 						value={blog.url}
-						name="Url"
+						name="url"
 						onChange={(ev) => setBlog({ ...blog, url: ev.target.value })}
 					/>
 				</label>

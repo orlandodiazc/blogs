@@ -1,11 +1,10 @@
 import { useState } from 'react'
 
-export default function Blog({ blog, handleLike, handleRemove }) {
+export default function Blog({ user, blog, handleLike, handleRemove }) {
 	const [visible, setVisible] = useState(false)
-
 	return (
 		<li>
-			{blog.title} - {blog.author}
+			<span>{blog.title}</span> - <span>{blog.author}</span>
 			<button type="button" onClick={() => setVisible(!visible)}>
 				{visible ? 'close' : 'view'}
 			</button>
@@ -13,15 +12,17 @@ export default function Blog({ blog, handleLike, handleRemove }) {
 				<div>
 					<p>{blog.url}</p>
 					<p>
-						likes: {blog.likes}{' '}
+						likes: <span>{blog.likes}</span>
 						<button type="button" onClick={() => handleLike(blog.id, blog)}>
 							like
 						</button>
 					</p>
 					<p>{blog.user.name}</p>
-					<button type="button" onClick={() => handleRemove(blog.id)}>
-						remove
-					</button>
+					{user.username === blog.user.username && (
+						<button type="button" onClick={() => handleRemove(blog.id)}>
+							remove
+						</button>
+					)}
 				</div>
 			)}
 		</li>
